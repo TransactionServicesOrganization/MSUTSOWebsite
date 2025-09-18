@@ -1,0 +1,468 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* HEADER BASE */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 110px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: rgba(0, 85, 50, 1);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes nav to bottom */
+  color: white;
+  padding: 0 20px;
+}
+
+/* Transparent / solid states */
+header.solid {
+  background-color: rgb(0, 85, 50, 1);
+}
+
+header.transparent {
+  background-color: rgba(0, 85, 50, 0.6);
+}
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* TOP ROW (logo + icons) */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* centers vertically */
+  height: 60px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.icon-links a {
+  display: inline-flex;
+  padding: 5px;
+  transition: background 0.3s ease, border-radius 0.3s ease;
+}
+
+.icon-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+/* NAVIGATION */
+.header-bottom {
+  display: contents;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 8px; /* pulls nav closer to bottom */
+}
+
+.header-bottom a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.header-bottom a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Logo placeholder */
+
+.logo img{
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.icon-links {
+    margin-top: 15px;
+}
+
+.icon-links img {
+    width: 24px;
+    height: 24px;;
+}
+
+.icon-links a {
+    margin-left: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Bottom nav inside header */
+.header-bottom {
+    display: flex;
+    align-items: flex-end; /* Align links to bottom */
+    justify-content: space-between;
+    font-size: 0.95em;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 70px; /* Fill remaining header space */
+}
+
+.header-bottom a {
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.header-bottom a:hover {
+    background-color: rgba(0, 120, 70, 0.25); /* Slightly brighter on hover */
+}
+
+/* Carousel Container */
+.carousel {
+    margin-top: 110px;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* Slides wrapper */
+.slides {
+    display: flex;
+    transition: transform 1.2s ease-in-out;
+    will-change: transform;
+}
+
+/* Individual Slide */
+.slide {
+    min-width: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Overlay Text */
+.overlay {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    transition: transform 1.8s ease-in-out;
+}
+
+.overlay h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin-top: 0.5em;
+}
+
+/* Slide dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    background-color: grey;
+    opacity: 50%;
+    border-radius: 20px;
+    padding: 10px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(37, 37, 37, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    transition: scale 0.5s;
+}
+
+.dot.active {
+    background-color: rgb(255, 255, 255);
+    scale: 115%;
+}
+
+/* Main Content Styles */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* space between rows */
+  margin: auto;
+  padding: 20px;
+}
+
+main > p:first-of-type {
+  background-color: rgba(0, 85, 50, 0.1); /* subtle MSU green tint */
+  border-left: 6px solid rgba(0, 85, 50, 0.8); /* decorative bar */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px; /* keeps it centered and readable */
+  border-radius: 10px;
+  text-align: center;
+}
+
+main .members {
+  max-width: 1000px;     /* keeps everything from stretching too wide */
+  margin: 0 auto;        /* centers horizontally */
+  padding: 60px 20px;    /* top/bottom space + side breathing room */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;             /* space between each member row */
+  padding-top: 100px;    /* space below fixed header */
+}
+
+/* Row styles */
+.members .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;             /* space between image and text */
+  flex-wrap: wrap;       /* allows stacking on smaller screens */
+}
+
+/* Reverse row */
+.members .row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Images */
+.members .row img {
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* Text block */
+.members .row .text {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.members .row .text h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.members .row .text h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: #444;
+}
+
+.members .row .text p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .members .row {
+    flex-direction: column;  /* stack image on top of text */
+    gap: 20px;
+    text-align: center;
+  }
+
+  .members {
+    gap: 40px;              /* tighten spacing on smaller screens */
+  }
+}
+
+main .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+main .gallery figure {
+  position: relative;
+  flex: 1 1 20%;
+  max-width: 20%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+main .gallery img {
+  width: 100%;
+  height: auto; /* keeps natural aspect ratio */
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+main .gallery figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+main .gallery figure:hover figcaption {
+  opacity: 1;
+}
+
+/*  */
+
+main .sponsors {
+    padding-top: 110px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ensures equal spacing */
+  gap: 40px; /* add consistent space */
+}
+
+.row .text {
+  flex: 1; /* takes remaining space evenly */
+  padding: 20px;
+  text-align: left; /* looks more natural for paragraphs */
+  max-width: 600px; /* prevents overly wide text */
+  margin: auto; /* centers within flex */
+}
+
+.row.reverse {
+  flex-direction: row-reverse; /* swap image and text */
+  offset-position: 0 20%;
+}
+
+.row img {
+  width: 45%;
+  max-width: 350px;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.row .text {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.row h2 {
+  margin-bottom: 10px;
+  text-align: left;
+  text-align: center;
+}
+
+.row.reverse h2 {
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: rgba(0, 85, 50, 1);
+  color: white;
+  padding: 20px 40px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  width: 160px; /* large size by default */
+  height: auto;
+  filter: brightness(0) invert(1); /* makes logo white */
+}
+
+.dot {
+  color: white;
+}
+
+/* --- Responsive Behavior --- */
+@media (max-width: 600px) {
+  .left-logo {
+    display: none; /* hide left logo */
+  }
+
+  .right-logo {
+    width: 100px; /* resize smaller for mobile */
+  }
+
+  .footer-content {
+    justify-content: center; /* keep text + right logo centered */
+    gap: 20px;
+  }
+
+  .footer-center h2 {
+    font-size: 1.2rem; /* shrink heading if needed */
+  }
+}
