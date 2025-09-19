@@ -99,6 +99,7 @@ header.hide {
   font-size: 0.95em;
   padding: 0 30px;
   margin-bottom: 8px;
+  font-weight: bold;
 
   overflow-x: auto;       /* enable horizontal scroll */
   overflow-y: hidden;     /* prevent vertical scroll */
