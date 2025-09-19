@@ -408,34 +408,45 @@ footer {
   }
 
   .row {
-    flex-direction: column;     /* stack items vertically */
-    text-align: center;         /* center text under image */
-    gap: 20px;                  /* reduce spacing */
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
   }
 
   .row.reverse {
-    flex-direction: column;     /* ignore reverse on mobile, still image on top */
+    flex-direction: column;
   }
 
   .row img {
-    width: 80%;                 /* make images smaller to fit mobile */
+    width: 80%;
     max-width: 300px;
   }
 
   .row .text {
-    width: 100%;                /* let text take full width */
-    max-width: 500px;
+    width: 100%;         /* span full width */
+    max-width: none;     /* remove desktop constraint */
+    margin: 0 auto;      /* center text block */
+    padding: 0 10px;     /* small side padding for breathing room */
+    text-align: left;
   }
 
   .row .text h2 {
-    font-size: 1.2rem;  /* smaller headers */
+    font-size: 1.2rem;
   }
 
   .row .text p {
-    font-size: 0.9rem;  /* smaller paragraphs */
-    line-height: 1.4;   /* tighter spacing for mobile */
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  main > p:first-of-type {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0 auto;       /* ensure intro text is centered */
+    max-width: 90%;       /* keeps text from hugging edges */
   }
 }
+
 
 @media (max-width: 480px) {
   .carousel,
