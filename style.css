@@ -47,7 +47,7 @@ header.hide {
   gap: 10px;
   font-weight: bold;
   font-size: 1.4em;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .logo img {
   height: 60px;
@@ -92,18 +92,17 @@ header.hide {
 .header-bottom {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
   height: 70px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 0 10px;
+  font-size: 0.95em;
+  padding: 0 30px;
   margin-bottom: 8px;
   gap: 25px;
 }
 .header-bottom a {
   color: inherit;
   text-decoration: none;
-  padding: 8px 4%;
+  padding: 8px 16px;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
@@ -419,6 +418,19 @@ footer {
     width: 10px;
     height: 10px;
   }
+
+  /* Bottom Navigation */
+  .header-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 70px;
+    font-size: 0.6em;
+    padding: 0 2px;
+    margin-bottom: 8px;
+    gap: 2px;
+}
+
 }
 
 @media (max-width: 600px) {
