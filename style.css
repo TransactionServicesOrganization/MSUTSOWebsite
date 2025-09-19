@@ -206,6 +206,7 @@ main > p:first-of-type {
   border-radius: 10px;
   background-color: rgba(0, 85, 50, 0.1);
   text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.24);
 }
 
 /* Members */
@@ -464,7 +465,7 @@ main .sponsors {
   width: 45%;
   max-width: 350px;
   border-radius: 30px;
-  padding: 0 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.24);
 }
 .row .text {
   flex: 1;
