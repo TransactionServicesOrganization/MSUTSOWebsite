@@ -148,7 +148,7 @@ header.hide {
     margin-top: 110px;
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -168,7 +168,7 @@ header.hide {
 
 .slide img {
     width: 100%;
-    height: 500px;
+    height: 480px;
     object-fit: cover;
 }
 
@@ -224,7 +224,13 @@ header.hide {
 /* --- Mobile Adjustments --- */
 @media (max-width: 768px) {
     .carousel {
-        height: 45vh;
+        height: 380px;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
     }
 
     .overlay h2 {
@@ -244,9 +250,13 @@ header.hide {
 
 @media (max-width: 480px) {
     .carousel {
-        height: 40vh;
+        height: 240px;
     }
-
+    .slide img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+    }
     .overlay {
         top: 5%;
         left: 5%;
@@ -334,25 +344,72 @@ main .members {
 .members .row .text h2 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  font-weight: normal;
+  font-weight: bold;
   color: #444;
 }
 
 .members .row .text p {
   margin: 0;
   line-height: 1.5;
+  font-weight: bold;
+}
+
+.members .row .text p a {
+  color: #444;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .members .row {
-    flex-direction: column;  /* stack image on top of text */
+
+  main .members {
     gap: 20px;
+  }
+
+  .members .row {
+    flex-direction: wrap;  /* stack image on top of text */
+    gap: 5px;
     text-align: center;
   }
 
+  .members .row img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+
   .members {
-    gap: 40px;              /* tighten spacing on smaller screens */
+    gap: 0px;              /* tighten spacing on smaller screens */
+  }
+
+    /* Text block */
+  .members .row .text {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .members .row .text h1 {
+    font-size: 1.0rem;
+    margin-bottom: 5px;
+  }
+
+  .members .row .text h2 {
+    font-size: .8rem;
+    margin-bottom: 15px;
+  }
+
+  .members .row .text p {
+    margin: 0;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+    .members .row .text {
+    margin: 0;
+    line-height: 1.4;
+    font-weight: bold;
   }
 }
 
