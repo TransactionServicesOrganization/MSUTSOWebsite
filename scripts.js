@@ -66,3 +66,29 @@ dots.forEach(dot => {
 });
 
 setInterval(nextSlide, 10000); // Slide every 10 seconds
+
+// Select elements
+const popup = document.getElementById("imagePopup");
+const popupImg = document.getElementById("popupImg");
+const closeBtn = document.getElementById("closePopup");
+
+// Open popup when image clicked
+document.querySelectorAll(".gallery img").forEach(img => {
+  img.addEventListener("click", () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+    popupImg.alt = img.alt;
+  });
+});
+
+// Close popup on button click
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Also close popup if background clicked
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
