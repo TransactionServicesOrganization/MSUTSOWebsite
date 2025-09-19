@@ -1,326 +1,222 @@
+/* ---------- GLOBAL ---------- */
 body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* HEADER BASE */
+/* ---------- HEADER ---------- */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 110px;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  background-color: rgba(0, 85, 50, 1);
-  z-index: 1000;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes nav to bottom */
-  color: white;
+  justify-content: space-between;
+  box-sizing: border-box;
   padding: 0 20px;
+  background-color: rgba(0, 85, 50, 1);
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
-/* Transparent / solid states */
+/* State variations */
 header.solid {
-  background-color: rgb(0, 85, 50, 1);
+  background-color: rgb(0, 85, 50);
 }
-
 header.transparent {
   background-color: rgba(0, 85, 50, 0.6);
 }
-
 header.hide {
   transform: translateY(-100%);
 }
 
-/* TOP ROW (logo + icons) */
+/* Top Row */
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* centers vertically */
+  align-items: center;
   height: 60px;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.4em;
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-top: 10px;
 }
-
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
 .logo a {
-  color: inherit;
-  text-decoration: none;
   display: flex;
   align-items: center;
+  color: inherit;
+  text-decoration: none;
 }
 
+/* Icon links */
+.icon-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
 .icon-links a {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   padding: 5px;
   transition: background 0.3s ease, border-radius 0.3s ease;
 }
-
 .icon-links a:hover {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 6px;
 }
-
-/* NAVIGATION */
-.header-bottom {
-  display: contents;
-  justify-content: center;
-  gap: 25px;
-  margin-bottom: 8px; /* pulls nav closer to bottom */
-}
-
-.header-bottom a {
-  color: white;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.header-bottom a:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-/* Logo placeholder */
-
-.logo img{
-    height: 60px;
-    width: auto;
-    filter: brightness(0) invert(1);
-}
-
-.icon-links {
-    margin-top: 15px;
-}
-
-.icon-links img {
-    width: 24px;
-    height: 24px;;
-}
-
-.icon-links a {
-    margin-left: 15px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-}
-
+.icon-links img,
 .icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
 
-/* Bottom nav inside header */
+/* Bottom Navigation */
 .header-bottom {
-    display: flex;
-    align-items: flex-end; /* Align links to bottom */
-    justify-content: space-between;
-    font-size: 0.95em;
-    padding-left: 30px;
-    padding-right: 30px;
-    height: 70px; /* Fill remaining header space */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 70px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0 10px;
+  margin-bottom: 8px;
+  gap: 25px;
 }
-
 .header-bottom a {
-    color: inherit;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 4%;
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
-
 .header-bottom a:hover {
-    background-color: rgba(0, 120, 70, 0.25); /* Slightly brighter on hover */
+  background-color: rgba(0, 120, 70, 0.25);
 }
 
-/* Carousel Container */
+/* ---------- CAROUSEL ---------- */
 .carousel {
-    margin-top: 110px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  margin-top: 110px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-
-/* Slides wrapper */
 .slides {
-    display: flex;
-    transition: transform 1.2s ease-in-out;
-    will-change: transform;
+  display: flex;
+  transition: transform 1.2s ease-in-out;
+  will-change: transform;
 }
-
-/* Individual Slide */
 .slide {
-    min-width: 100%;
-    position: relative;
-    flex-shrink: 0;
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
 }
-
 .slide img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
 }
 
-/* Overlay Text */
+/* Overlay text */
 .overlay {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    color: white;
-    text-shadow: 1px 1px 5px black;
-    transition: transform 1.8s ease-in-out;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  transition: transform 1.8s ease-in-out;
 }
-
 .overlay h2 {
-    font-size: 2.5rem;
-    margin: 0;
+  font-size: 2.5rem;
+  margin: 0;
 }
-
 .overlay p {
-    font-size: 1.2rem;
-    margin-top: 0.5em;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
 }
 
-/* Slide dots */
+/* Dots */
 .dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    background-color: grey;
-    opacity: 50%;
-    border-radius: 20px;
-    padding: 10px;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background-color: grey;
+  opacity: 50%;
+  border-radius: 20px;
+  transform: translateX(-50%);
+  z-index: 2;
 }
-
 .dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(37, 37, 37, 0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-    transition: scale 0.5s;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(37, 37, 37, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease, scale 0.5s;
 }
-
 .dot.active {
-    background-color: rgb(255, 255, 255);
-    scale: 115%;
-}
-/* --- Mobile Adjustments --- */
-@media (max-width: 768px) {
-    .carousel {
-        height: 380px;
-    }
-
-    .slide img {
-        width: 100%;
-        height: 380px;
-        object-fit: cover;
-    }
-
-    .overlay h2 {
-        font-size: 1.8rem;
-    }
-
-    .overlay p {
-        font-size: 1rem;
-    }
-
-    .dots {
-        bottom: 10px;
-        padding: 6px 10px;
-        gap: 8px;
-    }
+  background-color: white;
+  scale: 115%;
 }
 
-@media (max-width: 480px) {
-    .carousel {
-        height: 240px;
-    }
-    .slide img {
-        width: 100%;
-        height: 240px;
-        object-fit: cover;
-    }
-    .overlay {
-        top: 5%;
-        left: 5%;
-        right: 5%;
-    }
-
-    .overlay h2 {
-        font-size: 1.4rem;
-    }
-
-    .overlay p {
-        font-size: 0.9rem;
-    }
-
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-}
-
-/* Main Content Styles */
+/* ---------- MAIN ---------- */
 main {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* space between rows */
+  gap: 40px;
   margin: auto;
   padding: 20px;
 }
-
 main > p:first-of-type {
-  background-color: rgba(0, 85, 50, 0.1); /* subtle MSU green tint */
-  border-left: 6px solid rgba(0, 85, 50, 0.8); /* decorative bar */
-  padding: 20px;
+  max-width: 800px;
   margin: 20px auto;
-  max-width: 800px; /* keeps it centered and readable */
+  padding: 20px;
+  border-left: 6px solid rgba(0, 85, 50, 0.8);
   border-radius: 10px;
+  background-color: rgba(0, 85, 50, 0.1);
   text-align: center;
 }
 
+/* Members */
 main .members {
-  max-width: 1000px;     /* keeps everything from stretching too wide */
-  margin: 0 auto;        /* centers horizontally */
-  padding: 60px 20px;    /* top/bottom space + side breathing room */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 60px;
   display: flex;
   flex-direction: column;
-  gap: 60px;             /* space between each member row */
-  padding-top: 100px;    /* space below fixed header */
+  gap: 60px;
 }
-
-/* Row styles */
 .members .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;             /* space between image and text */
-  flex-wrap: wrap;       /* allows stacking on smaller screens */
+  gap: 40px;
+  flex-wrap: wrap;
 }
-
-/* Reverse row */
 .members .row.reverse {
   flex-direction: row-reverse;
 }
-
-/* Images */
 .members .row img {
   width: 200px;
   height: 240px;
@@ -328,100 +224,38 @@ main .members {
   border-radius: 20px;
   flex-shrink: 0;
 }
-
-/* Text block */
 .members .row .text {
   flex: 1;
   min-width: 250px;
   text-align: center;
 }
-
 .members .row .text h1 {
   font-size: 1.8rem;
   margin-bottom: 5px;
 }
-
 .members .row .text h2 {
   font-size: 1.2rem;
   margin-bottom: 15px;
   font-weight: bold;
   color: #444;
 }
-
 .members .row .text p {
   margin: 0;
   line-height: 1.5;
   font-weight: bold;
 }
-
 .members .row .text p a {
   color: #444;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-
-  main .members {
-    gap: 20px;
-  }
-
-  .members .row {
-    flex-direction: wrap;  /* stack image on top of text */
-    gap: 5px;
-    text-align: center;
-  }
-
-  .members .row img {
-    width: 100px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 20px;
-    flex-shrink: 0;
-  }
-
-  .members {
-    gap: 0px;              /* tighten spacing on smaller screens */
-  }
-
-    /* Text block */
-  .members .row .text {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-  }
-
-  .members .row .text h1 {
-    font-size: 1.0rem;
-    margin-bottom: 5px;
-  }
-
-  .members .row .text h2 {
-    font-size: .8rem;
-    margin-bottom: 15px;
-  }
-
-  .members .row .text p {
-    margin: 0;
-    line-height: 1.4;
-    font-weight: bold;
-  }
-
-    .members .row .text {
-    margin: 0;
-    line-height: 1.4;
-    font-weight: bold;
-  }
-}
-
+/* Gallery */
 main .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  padding-top: 100px;
   justify-content: center;
+  gap: 10px;
+  padding: 100px 10px 10px;
 }
-
 main .gallery figure {
   position: relative;
   flex: 1 1 20%;
@@ -430,141 +264,175 @@ main .gallery figure {
   overflow: hidden;
   border-radius: 10px;
 }
-
 main .gallery img {
   width: 100%;
-  height: auto; /* keeps natural aspect ratio */
+  height: auto;
   display: block;
   border-radius: 10px;
   object-fit: cover;
 }
-
 main .gallery figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
   padding: 5px 10px;
   font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
 main .gallery figure:hover figcaption {
   opacity: 1;
 }
 
-/*  */
-
+/* Sponsors */
 main .sponsors {
-    padding-top: 110px;
+  padding-top: 110px;
 }
 
+/* Generic Row */
 .row {
   display: flex;
   align-items: center;
-  justify-content: center; /* ensures equal spacing */
-  gap: 40px; /* add consistent space */
+  justify-content: center;
+  gap: 40px;
 }
-
-.row .text {
-  flex: 1; /* takes remaining space evenly */
-  padding: 20px;
-  text-align: left; /* looks more natural for paragraphs */
-  max-width: 600px; /* prevents overly wide text */
-  margin: auto; /* centers within flex */
-}
-
 .row.reverse {
-  flex-direction: row-reverse; /* swap image and text */
-  offset-position: 0 20%;
+  flex-direction: row-reverse;
 }
-
 .row img {
   width: 45%;
   max-width: 350px;
   border-radius: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px;
 }
-
 .row .text {
+  flex: 1;
   width: 50%;
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
   text-align: center;
 }
-
 .row h2 {
   margin-bottom: 10px;
-  text-align: left;
   text-align: center;
 }
 
-.row.reverse h2 {
-  text-align: center;
-}
-
-/* Footer styles */
+/* ---------- FOOTER ---------- */
 footer {
   background-color: rgba(0, 85, 50, 1);
   color: white;
   padding: 20px 40px;
   margin-top: 50px;
 }
-
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .footer-center {
   text-align: center;
 }
-
 .footer-nav {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .footer-nav a {
   color: white;
   text-decoration: none;
 }
-
 .footer-nav a:hover {
   text-decoration: underline;
 }
-
 .footer-logo {
-  width: 160px; /* large size by default */
+  width: 160px;
   height: auto;
-  filter: brightness(0) invert(1); /* makes logo white */
+  filter: brightness(0) invert(1);
 }
 
-.dot {
-  color: white;
-}
-
-/* --- Responsive Behavior --- */
-@media (max-width: 600px) {
-  .left-logo {
-    display: none; /* hide left logo */
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .carousel,
+  .slide img {
+    height: 380px;
+  }
+  .overlay h2 {
+    font-size: 1.8rem;
+  }
+  .overlay p {
+    font-size: 1rem;
+  }
+  .dots {
+    bottom: 10px;
+    padding: 6px 10px;
+    gap: 8px;
   }
 
-  .right-logo {
-    width: 100px; /* resize smaller for mobile */
-  }
-
-  .footer-content {
-    justify-content: center; /* keep text + right logo centered */
+  /* Members */
+  main .members {
     gap: 20px;
   }
+  .members .row {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+  .members .row img {
+    width: 100px;
+    height: 120px;
+  }
+  .members .row .text {
+    min-width: 120px;
+  }
+  .members .row .text h1 {
+    font-size: 1rem;
+  }
+  .members .row .text h2 {
+    font-size: 0.8rem;
+  }
+  .members .row .text p {
+    line-height: 1.4;
+  }
+}
 
+@media (max-width: 480px) {
+  .carousel,
+  .slide img {
+    height: 240px;
+  }
+  .overlay {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+  }
+  .overlay h2 {
+    font-size: 1.4rem;
+  }
+  .overlay p {
+    font-size: 0.9rem;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-logo {
+    display: none;
+  }
+  .right-logo {
+    width: 100px;
+  }
+  .footer-content {
+    justify-content: center;
+    gap: 20px;
+  }
   .footer-center h2 {
-    font-size: 1.2rem; /* shrink heading if needed */
+    font-size: 1.2rem;
   }
 }
