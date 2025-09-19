@@ -406,6 +406,35 @@ footer {
   .members .row .text p {
     line-height: 1.4;
   }
+
+  .row {
+    flex-direction: column;     /* stack items vertically */
+    text-align: center;         /* center text under image */
+    gap: 20px;                  /* reduce spacing */
+  }
+
+  .row.reverse {
+    flex-direction: column;     /* ignore reverse on mobile, still image on top */
+  }
+
+  .row img {
+    width: 80%;                 /* make images smaller to fit mobile */
+    max-width: 300px;
+  }
+
+  .row .text {
+    width: 100%;                /* let text take full width */
+    max-width: 500px;
+  }
+
+  .row .text h2 {
+    font-size: 1.2rem;  /* smaller headers */
+  }
+
+  .row .text p {
+    font-size: 0.9rem;  /* smaller paragraphs */
+    line-height: 1.4;   /* tighter spacing for mobile */
+  }
 }
 
 @media (max-width: 480px) {
