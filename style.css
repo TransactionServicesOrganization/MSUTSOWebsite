@@ -221,6 +221,51 @@ header.hide {
     background-color: rgb(255, 255, 255);
     scale: 115%;
 }
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    .carousel {
+        height: 45vh;
+    }
+
+    .overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .overlay p {
+        font-size: 1rem;
+    }
+
+    .dots {
+        bottom: 10px;
+        padding: 6px 10px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 40vh;
+    }
+
+    .overlay {
+        top: 5%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .overlay h2 {
+        font-size: 1.4rem;
+    }
+
+    .overlay p {
+        font-size: 0.9rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
 
 /* Main Content Styles */
 main {
