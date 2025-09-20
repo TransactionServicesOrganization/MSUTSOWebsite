@@ -273,6 +273,7 @@ main .gallery figure {
   margin: 0;
   overflow: hidden;
   border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.24);
 
   /* Square box trick */
   aspect-ratio: 1 / 1;
