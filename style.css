@@ -211,7 +211,6 @@ main > p:first-of-type {
 
 /* Members */
 main .members {
-  max-width: 1000px;
   margin: 0 auto;
   padding: 100px 20px 60px;
   display: flex;
@@ -583,11 +582,17 @@ footer {
   main .members {
     gap: 20px;
   }
-  .members .row {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
+.members .row {
+  gap: 5px;
+  text-align: center;
+}
+
+.members .row {
+  flex-direction: row;
+}
+.members .row.reverse {
+  flex-direction: row-reverse;
+}
   .members .row img {
     width: 100px;
     height: 120px;
@@ -612,7 +617,7 @@ footer {
   }
 
   .row.reverse {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .row img {
