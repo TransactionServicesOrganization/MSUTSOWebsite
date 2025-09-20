@@ -399,7 +399,7 @@ main .sponsors {
 }
 
 /* Sponsorship Advertisement */
-.your-company-here {
+.form {
     text-align: center;
     padding: 3rem 1.5rem;
     background: linear-gradient(135deg, #eff6ff, #dbfee9);
@@ -409,20 +409,20 @@ main .sponsors {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.your-company-here h2 {
+.form h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #005a2d;
     font-weight: 700;
 }
 
-.your-company-here img {
+.form img {
     max-width: 200px;
     margin: 1rem auto;
     display: block;
 }
 
-.your-company-here p {
+.form p {
     font-size: 1.1rem;
     margin: 1rem auto;
     color: #374151;
@@ -430,7 +430,7 @@ main .sponsors {
     line-height: 1.6;
 }
 
-.your-company-here a {
+.form a {
     display: inline-block;
     margin-top: 1.2rem;
     padding: 0.8rem 1.5rem;
@@ -442,13 +442,13 @@ main .sponsors {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.your-company-here a:hover {
+.form a:hover {
     background: #11691c;
     transform: translateY(-2px);
 }
 
 /* QR Code Box */
-.your-company-here .qr-code {
+.form .qr-code {
     margin-top: 2rem;
     background: white;
     padding: 1.5rem;
@@ -457,12 +457,12 @@ main .sponsors {
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-.your-company-here .qr-code img {
+.form .qr-code img {
     max-width: 150px;
     margin-bottom: 0.8rem;
 }
 
-.your-company-here .qr-code p {
+.form .qr-code p {
     font-size: 0.9rem;
     color: #4b5563;
 }
@@ -477,24 +477,24 @@ main .sponsors {
         max-width: 120px;
     }
 
-    .your-company-here {
+    .form {
         padding: 2rem 1rem;
     }
 
-    .your-company-here h2 {
+    .form h2 {
         font-size: 1.5rem;
     }
 
-    .your-company-here p {
+    .form p {
         font-size: 1rem;
     }
 
-    .your-company-here a {
+    .form a {
         font-size: 0.9rem;
         padding: 0.7rem 1.2rem;
     }
 
-    .your-company-here .qr-code img {
+    .form .qr-code img {
         max-width: 120px;
     }
 }
