@@ -22,7 +22,6 @@ header {
   z-index: 1000;
 }
 
-/* State variations */
 header.solid {
   background-color: rgb(0, 85, 50);
 }
@@ -88,7 +87,6 @@ header.hide {
   fill: currentColor;
 }
 
-/* Bottom Navigation */
 /* Bottom Navigation */
 .header-bottom {
   display: flex;
