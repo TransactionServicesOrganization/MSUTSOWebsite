@@ -402,7 +402,7 @@ main .sponsors {
     background: linear-gradient(135deg, #eff6ff, #dbfee9);
     border-radius: 20px;
     margin: 2rem auto;
-    max-width: 800px;
+    width: 80%;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -507,15 +507,16 @@ main .sponsors {
   flex-direction: row-reverse;
 }
 .row img {
-  width: 45%;
-  max-width: 350px;
+  width: 34%;
   border-radius: 30px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.24);
 }
 .row .text {
   flex: 1;
-  width: 50%;
-  max-width: 600px;
+  width: 80%;
+  background: linear-gradient(135deg, #eff6ff, #dbfee9);
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.24);       /* span full width */
   margin: auto;
   padding: 20px;
   text-align: center;
@@ -624,7 +625,7 @@ footer {
   }
 
   .row .text {
-    width: 100%;         /* span full width */
+    width: 100%;  
     max-width: none;     /* remove desktop constraint */
     margin: 0 auto;      /* center text block */
     padding: 0 10px;     /* small side padding for breathing room */
